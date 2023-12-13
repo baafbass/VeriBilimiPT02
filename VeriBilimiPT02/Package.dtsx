@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="12/12/2023 10:32:49 AM"
@@ -11,9 +11,567 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionGUID="{BCC2EF78-29C3-4E57-97E0-4AA0F5DE7E19}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{04EB629C-3E69-4FBE-BD63-0BBE96368A7E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-S6N2Q22\BAAFBASS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5EB74309-A445-4553-ABC9-584EDDFAB6A9}"
+      DTS:ObjectName="DESKTOP-S6N2Q22\BAAFBASS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-S6N2Q22\BAAFBASS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{5EB74309-A445-4553-ABC9-584EDDFAB6A9}DESKTOP-S6N2Q22\BAAFBASS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\BOLGE-DONGU"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{3AF0EE33-A92F-4935-B2FF-ACA81C49381B}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="BOLGE-DONGU">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachItemEnumerator"
+        DTS:DTSID="{8E157F34-E797-46A8-973D-8B7449EFCEA1}"
+        DTS:ObjectName="{8E157F34-E797-46A8-973D-8B7449EFCEA1}">
+        <DTS:ObjectData />
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\BOLGE-DONGU\BOLGE-AD-BUL"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{95EFA9DB-837A-40A2-888F-84AC4A826971}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="BOLGE-AD-BUL"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5EB74309-A445-4553-ABC9-584EDDFAB6A9}"
+              SQLTask:SqlStatementSource="SELECT BolgeAd FROM BOLGE WHERE BolgeID=?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\BOLGE-DONGU\BOLGE-KLASOR-OLUSTUR"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{9BEE79B5-0DCA-4AC9-854C-1AF5397A23FC}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="BOLGE-KLASOR-OLUSTUR"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="CreateDirectory"
+              TaskOverwriteDestFile="True"
+              TaskIsSourceVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\BOLGE-DONGU\BOLGE-KLASOR-YOL-OLUSTUR"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Script Task"
+          DTS:DTSID="{12F766DC-66D8-4984-B0B8-CABB4A95EA87}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="BOLGE-KLASOR-YOL-OLUSTUR"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_8921a239c9f3467d9fc2386caaf9f55c"
+              VSTAMajorVersion="16"
+              VSTAMinorVersion="0"
+              Language="CSharp" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\BOLGE-DONGU\SEHIR-DONGU"
+          DTS:AssignExpression="@Sayacl=@Sayacl+1"
+          DTS:CreationName="STOCK:FORLOOP"
+          DTS:Description="For Loop Container"
+          DTS:DTSID="{07A452BA-5679-4C7E-8073-5B917F8C45FA}"
+          DTS:EvalExpression="@Sayacl&lt;=@BolgeSayisi"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:InitExpression="@Sayacl=1"
+          DTS:LocaleID="-1"
+          DTS:MaxConcurrent="1"
+          DTS:ObjectName="SEHIR-DONGU">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-OLUSTUR-YAZ"
+              DTS:CreationName="Microsoft.Pipeline"
+              DTS:Description="Data Flow Task"
+              DTS:DTSID="{A5C445A1-33F0-4AB9-A1C4-7860AC04BCEC}"
+              DTS:ExecutableType="Microsoft.Pipeline"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="DOSYA-OLUSTUR-YAZ"
+              DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <pipeline
+                  version="1" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-YOL-OLUSTUR"
+              DTS:CreationName="Microsoft.ScriptTask"
+              DTS:Description="Script Task"
+              DTS:DTSID="{E3402729-3E17-40F6-B330-F13E59BB51CB}"
+              DTS:ExecutableType="Microsoft.ScriptTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="DOSYA-YOL-OLUSTUR"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ScriptProject
+                  Name="ST_d2ad39349fc44ad881ced93194cdf8ca"
+                  VSTAMajorVersion="16"
+                  VSTAMinorVersion="0"
+                  Language="CSharp" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\BOLGE-DONGU\SEHIR-DONGU\SEHIR-KLASOR-OLUSTUR"
+              DTS:CreationName="Microsoft.FileSystemTask"
+              DTS:Description="File System Task"
+              DTS:DTSID="{1469BE9B-2F32-4D42-9E75-06D820EC3B00}"
+              DTS:ExecutableType="Microsoft.FileSystemTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="SEHIR-KLASOR-OLUSTUR"
+              DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData />
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\BOLGE-DONGU\SEHIR-DONGU\SEHIR-KLASOR-YOL-OLUSTUR"
+              DTS:CreationName="Microsoft.ScriptTask"
+              DTS:Description="Script Task"
+              DTS:DTSID="{5E64EA92-723B-4698-82FF-DD7F867A1A7A}"
+              DTS:ExecutableType="Microsoft.ScriptTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="SEHIR-KLASOR-YOL-OLUSTUR"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ScriptProject
+                  Name="ST_358d0b6f88084c10aac7378451a29355"
+                  VSTAMajorVersion="16"
+                  VSTAMinorVersion="0"
+                  Language="CSharp" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\BOLGE-DONGU\SEHIR-DONGU.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{5357CEEF-C96E-4033-87E5-8D40BB40B575}"
+              DTS:From="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-YOL-OLUSTUR"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-OLUSTUR-YAZ" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\BOLGE-DONGU\SEHIR-DONGU.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{BA940D5B-F01F-45AD-A292-1091AB360E54}"
+              DTS:From="Package\BOLGE-DONGU\SEHIR-DONGU\SEHIR-KLASOR-OLUSTUR"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-YOL-OLUSTUR" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\BOLGE-DONGU\SEHIR-DONGU.PrecedenceConstraints[Constraint 2]"
+              DTS:CreationName=""
+              DTS:DTSID="{605FD14D-AB20-4EB8-99AB-003E56FBBFAE}"
+              DTS:From="Package\BOLGE-DONGU\SEHIR-DONGU\SEHIR-KLASOR-YOL-OLUSTUR"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 2"
+              DTS:To="Package\BOLGE-DONGU\SEHIR-DONGU\SEHIR-KLASOR-OLUSTUR" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\BOLGE-DONGU\SEHIR-LISTESI"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F1B155B0-EFBF-4C10-BDB3-FEAA32E8EA61}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SEHIR-LISTESI"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\BOLGE-DONGU.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{0E5D5450-15B5-4BD4-B080-BF71F1D7015C}"
+          DTS:From="Package\BOLGE-DONGU\BOLGE-AD-BUL"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\BOLGE-DONGU\BOLGE-KLASOR-YOL-OLUSTUR" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\BOLGE-DONGU.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{4707FD69-2E5A-424D-B870-BC3AD911CB2C}"
+          DTS:From="Package\BOLGE-DONGU\BOLGE-KLASOR-YOL-OLUSTUR"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\BOLGE-DONGU\BOLGE-KLASOR-OLUSTUR" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\BOLGE-DONGU.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{01F7B7CE-BD42-4A9A-B847-8F52A86A7A10}"
+          DTS:From="Package\BOLGE-DONGU\BOLGE-KLASOR-OLUSTUR"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\BOLGE-DONGU\SEHIR-LISTESI" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\BOLGE-DONGU.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{61CF853F-CEF1-4994-8498-48F1660D071C}"
+          DTS:From="Package\BOLGE-DONGU\SEHIR-LISTESI"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\BOLGE-DONGU\SEHIR-DONGU" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\BOLGE-SAYISI-HESAPLA"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1FE279F7-9194-415B-AF2C-5AE9C6238E2B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="BOLGE-SAYISI-HESAPLA"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{9136EDAB-D457-4D70-9306-D0E1B0555B23}"
+      DTS:From="Package\BOLGE-SAYISI-HESAPLA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\BOLGE-DONGU" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="196.666666666667,42.6666666666667"
+          Id="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-YOL-OLUSTUR"
+          TopLeft="47.9999981001019,146.973684435901" />
+        <NodeLayout
+          Size="238.666666666667,42.6666666666667"
+          Id="Package\BOLGE-DONGU\SEHIR-DONGU\SEHIR-KLASOR-YOL-OLUSTUR"
+          TopLeft="11.749999720603,20.0434680911147" />
+        <NodeLayout
+          Size="213.333333333334,42.6666666666667"
+          Id="Package\BOLGE-DONGU\SEHIR-DONGU\SEHIR-KLASOR-OLUSTUR"
+          TopLeft="338.624985108152,25.1140395351175" />
+        <NodeLayout
+          Size="196,42.6666666666667"
+          Id="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-OLUSTUR-YAZ"
+          TopLeft="349.916647276531,146.328306626477" />
+        <EdgeLayout
+          Id="Package\BOLGE-DONGU\SEHIR-DONGU.PrecedenceConstraints[Constraint]"
+          TopLeft="244.666664766769,167.984328864522">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105.249982509763,0"
+              Start="0,0"
+              End="97.7499825097626,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="97.7499825097626,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\BOLGE-DONGU\SEHIR-DONGU.PrecedenceConstraints[Constraint 1]"
+          TopLeft="445.291651774819,67.7807062017842">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-298.958320341384,79.1929782341172"
+              Start="0,0"
+              End="-298.958320341384,71.6929782341172">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5964891170586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.5964891170586"
+                    Point2="0,39.5964891170586"
+                    Point3="-4,39.5964891170586" />
+                  <mssgle:LineSegment
+                    End="-294.958320341384,39.5964891170586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-294.958320341384,39.5964891170586"
+                    Point2="-298.958320341384,39.5964891170586"
+                    Point3="-298.958320341384,43.5964891170586" />
+                  <mssgle:LineSegment
+                    End="-298.958320341384,71.6929782341172" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\BOLGE-DONGU\SEHIR-DONGU.PrecedenceConstraints[Constraint 2]"
+          TopLeft="250.41666638727,43.9120871464494">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="88.2083187208827,0"
+              Start="0,0"
+              End="80.7083187208827,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="80.7083187208827,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="567.333333333334,218.666666666667"
+          Size="567.333333333334,261.333333333334"
+          Id="Package\BOLGE-DONGU\SEHIR-DONGU"
+          TopLeft="67.9583512985455,260.762001587707" />
+        <NodeLayout
+          Size="158.666666666667,42.6666666666667"
+          Id="Package\BOLGE-DONGU\BOLGE-AD-BUL"
+          TopLeft="54.166662643353,25.6929783768547" />
+        <NodeLayout
+          Size="242.666666666667,42.6666666666667"
+          Id="Package\BOLGE-DONGU\BOLGE-KLASOR-YOL-OLUSTUR"
+          TopLeft="359.791648980852,23.6403468204447" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\BOLGE-DONGU\SEHIR-LISTESI"
+          TopLeft="406.666649567585,162.324556482824" />
+        <NodeLayout
+          Size="217.333333333334,42.6666666666667"
+          Id="Package\BOLGE-DONGU\BOLGE-KLASOR-OLUSTUR"
+          TopLeft="67.916663369785,160.377187753759" />
+        <EdgeLayout
+          Id="Package\BOLGE-DONGU.PrecedenceConstraints[Constraint]"
+          TopLeft="212.83332931002,45.999995931983">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="146.958319670832,0"
+              Start="0,0"
+              End="139.458319670832,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="139.458319670832,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\BOLGE-DONGU.PrecedenceConstraints[Constraint 1]"
+          TopLeft="481.124982314185,66.3070134871114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-304.541652277733,94.0701742666472"
+              Start="0,0"
+              End="-304.541652277733,86.5701742666472">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.0350871333236" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.0350871333236"
+                    Point2="0,47.0350871333236"
+                    Point3="-4,47.0350871333236" />
+                  <mssgle:LineSegment
+                    End="-300.541652277733,47.0350871333236" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-300.541652277733,47.0350871333236"
+                    Point2="-304.541652277733,47.0350871333236"
+                    Point3="-304.541652277733,51.0350871333236" />
+                  <mssgle:LineSegment
+                    End="-304.541652277733,86.5701742666472" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\BOLGE-DONGU.PrecedenceConstraints[Constraint 2]"
+          TopLeft="285.249996703118,182.517538784958">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="121.416652864466,0"
+              Start="0,0"
+              End="113.916652864466,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="113.916652864466,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\BOLGE-DONGU.PrecedenceConstraints[Constraint 3]"
+          TopLeft="484.666649567585,204.324556482824">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-133.041631602372,56.4374451048837"
+              Start="0,0"
+              End="-133.041631602372,48.9374451048837">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.2187225524418" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.2187225524418"
+                    Point2="0,28.2187225524418"
+                    Point3="-4,28.2187225524418" />
+                  <mssgle:LineSegment
+                    End="-129.041631602372,28.2187225524418" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-129.041631602372,28.2187225524418"
+                    Point2="-133.041631602372,28.2187225524418"
+                    Point3="-133.041631602372,32.2187225524418" />
+                  <mssgle:LineSegment
+                    End="-133.041631602372,48.9374451048837" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="686,574.666666666667"
+          Size="686,617.333333333334"
+          Id="Package\BOLGE-DONGU"
+          TopLeft="41.1250024307519,400.674008759694" />
+        <NodeLayout
+          Size="206.666666666667,42.6666666666667"
+          Id="Package\BOLGE-SAYISI-HESAPLA"
+          TopLeft="76.2083320201685,273.570179405195" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="179.541665353502,316.236846071861">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="204.58333707725,84.4371626878323"
+              Start="0,0"
+              End="204.58333707725,76.9371626878323">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.2185813439162" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.2185813439162"
+                    Point2="0,42.2185813439162"
+                    Point3="4,42.2185813439162" />
+                  <mssgle:LineSegment
+                    End="200.58333707725,42.2185813439162" />
+                  <mssgle:CubicBezierSegment
+                    Point1="200.58333707725,42.2185813439162"
+                    Point2="204.58333707725,42.2185813439162"
+                    Point3="204.58333707725,46.2185813439162" />
+                  <mssgle:LineSegment
+                    End="204.58333707725,76.9371626878323" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
