@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="212"
-  DTS:VersionGUID="{53B1FAD3-AD3F-4CD2-8597-1C7FADE108B5}">
+  DTS:VersionBuild="272"
+  DTS:VersionGUID="{30CD5997-7787-4710-B248-DF638815F328}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -40,7 +40,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="BankaAd"
-              DTS:DTSID="{D3B087EB-C856-4393-8E8B-4FCFD79935DA}"
+              DTS:DTSID="{A1722D78-179D-4228-8B9E-1A80951413D9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="DovizID"
-              DTS:DTSID="{E5E9FB9F-1005-4F09-8B19-9F5F5D323E2A}"
+              DTS:DTSID="{7D420CE2-D9E7-416F-B496-4B4A00EFAE04}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="OrtalamaHesapYas"
-              DTS:DTSID="{A91D5930-8030-46CF-9BEA-C6FB81F17E79}"
+              DTS:DTSID="{E707C062-B13E-42BF-A112-3D86D7084EC2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="AktifHesapSayisi"
-              DTS:DTSID="{4833747A-317C-4992-B3E1-082E57D3B93D}"
+              DTS:DTSID="{900AD35C-9E14-4BCE-AEDB-DA8A52805719}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -73,10 +73,20 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="ToplamBakiye"
-              DTS:DTSID="{852DE134-6FDF-4DE5-9D48-547C64F7F2E3}"
+              DTS:DTSID="{B71E23AB-F4DB-4A05-92BE-9CDE63C0F838}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-S6N2Q22\BAAFBASS.pt02db]"
+      DTS:CreationName="ADO.NET:OLEDB"
+      DTS:DTSID="{73C3FDA9-47C8-48C3-871E-087EC259E241}"
+      DTS:ObjectName="DESKTOP-S6N2Q22\BAAFBASS.pt02db">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-S6N2Q22\BAAFBASS;Initial Catalog=pt02db;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -89,6 +99,68 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=DESKTOP-S6N2Q22\BAAFBASS;Initial Catalog=pt02db;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{10D72C36-A94F-4C57-94B1-8DCA37A30730}DESKTOP-S6N2Q22\BAAFBASS.pt02db1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2545A01B-8C80-45C2-A096-0B3AAF2F4996}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::DosyaAd]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="FixedWidth"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="255"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BankaAd"
+              DTS:DTSID="{2371EF3B-3510-4AD4-B850-5BB1DBB97B46}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="20"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DovizID"
+              DTS:DTSID="{BFED1E51-F9D2-46D3-84E7-94DD851ED8C7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="11"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrtalamaHesapYas"
+              DTS:DTSID="{7EE85AF2-5E0D-4A0D-B48D-D7183DF24F7A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="11"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AktifHesapSayisi"
+              DTS:DTSID="{FE4F56BA-5F26-4DB1-8C50-2F806FA2B196}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="24"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ToplamBakiye"
+              DTS:DTSID="{F2450708-2C3F-4F7C-A7BC-72F95B5069B6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -128,7 +200,8 @@
       DTS:Namespace="User"
       DTS:ObjectName="SehirAd">
       <DTS:VariableValue
-        DTS:DataType="8">0</DTS:VariableValue>
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -152,7 +225,7 @@
           DTS:Namespace="User"
           DTS:ObjectName="AnaKlasor">
           <DTS:VariableValue
-            DTS:DataType="8">C:\Users\Lenovo\source\repos\VeriBilimiPT02\ISE311P02575</DTS:VariableValue>
+            DTS:DataType="8">C:\Users\Lenovo\source\repos\VeriBilimiPT02\ISE311P02575\\</DTS:VariableValue>
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
@@ -166,12 +239,21 @@
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
+          DTS:DTSID="{EAC9BDC5-522A-42C9-B192-8B7B4B2EBD22}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="BolgeID">
+          <DTS:VariableValue
+            DTS:DataType="17">1</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
           DTS:DTSID="{862C6B98-A2D5-4452-8D78-C4CB4A36387F}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="BolgeKlasor">
           <DTS:VariableValue
-            DTS:DataType="8">C:\Users\Lenovo\source\repos\VeriBilimiPT02\ISE311P02575\BolgeKlasor</DTS:VariableValue>
+            DTS:DataType="8">C:\Users\Lenovo\source\repos\VeriBilimiPT02\ISE311P02575\BolgeKlasor\\</DTS:VariableValue>
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
@@ -241,13 +323,13 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\BOLGE-DONGU\byol"
+          DTS:refId="Package\BOLGE-DONGU\BOLGE-KLASOR-YOL-OLUSTUR"
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
           DTS:DTSID="{907C2275-D551-4CAF-9450-AB4CAA58CEC0}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="byol"
+          DTS:ObjectName="BOLGE-KLASOR-YOL-OLUSTUR"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -258,6 +340,15 @@
               Language="CSharp"
               ReadOnlyVariables="User::AnaKlasor,User::BolgeAd,User::Sayacl"
               ReadWriteVariables="User::BolgeKlasor">
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -377,35 +468,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_5a66fa2842c342a9b44f6c4168c30a76.Properties.Settings.get_Default():ST_5a66fa2842c342a9b44f6c4168c30a76.Properties.Sett" +
-    "ings")]
-
-namespace ST_5a66fa2842c342a9b44f6c4168c30a76.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -642,7 +704,7 @@ namespace ST_5a66fa2842c342a9b44f6c4168c30a76
     <msb:CodeName>ST_5a66fa2842c342a9b44f6c4168c30a76</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_5a66fa2842c342a9b44f6c4168c30a76</msb:DisplayName>
-    <msb:ProjectId>{48C14773-119E-4DF4-9D86-B44F56860C64}</msb:ProjectId>
+    <msb:ProjectId>{62CEC03C-D17F-48C6-8DDE-5B7838422349}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_5a66fa2842c342a9b44f6c4168c30a76.csproj" />
@@ -652,32 +714,37 @@ namespace ST_5a66fa2842c342a9b44f6c4168c30a76
     <msb:File Include="Properties\Resources.resx" />
     <msb:File Include="Properties\Resources.Designer.cs" />
     <msb:File Include="ScriptMain.cs" />
-    <msb:Breakpoint Include="5ae96e85ea614b378466556586fcbf5f">
-      <msb:FileName>ScriptMain.cs</msb:FileName>
-      <msb:ColumnNumber>13</msb:ColumnNumber>
-      <msb:Enabled>True</msb:Enabled>
-      <msb:LineNumber>122</msb:LineNumber>
-      <msb:Condition>
-      </msb:Condition>
-      <msb:ConditionType>1</msb:ConditionType>
-      <msb:Language>C#</msb:Language>
-      <msb:HitCountType>1</msb:HitCountType>
-      <msb:HitCountTarget>1</msb:HitCountTarget>
-    </msb:Breakpoint>
-    <msb:Breakpoint Include="acdc7257976f4a2c84fab4ce4dcc08b9">
-      <msb:FileName>ScriptMain.cs</msb:FileName>
-      <msb:ColumnNumber>13</msb:ColumnNumber>
-      <msb:Enabled>True</msb:Enabled>
-      <msb:LineNumber>115</msb:LineNumber>
-      <msb:Condition>
-      </msb:Condition>
-      <msb:ConditionType>1</msb:ConditionType>
-      <msb:Language>C#</msb:Language>
-      <msb:HitCountType>1</msb:HitCountType>
-      <msb:HitCountTarget>1</msb:HitCountTarget>
-    </msb:Breakpoint>
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_5a66fa2842c342a9b44f6c4168c30a76.Properties.Settings.get_Default():ST_5a66fa2842c342a9b44f6c4168c30a76.Properties.Sett" +
+    "ings")]
+
+namespace ST_5a66fa2842c342a9b44f6c4168c30a76.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
               <ProjectItem
                 Name="Properties\AssemblyInfo.cs"
                 Encoding="UTF8"><![CDATA[using System.Reflection;
@@ -708,15 +775,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -788,7 +846,7 @@ namespace ST_5a66fa2842c342a9b44f6c4168c30a76.Properties {
               <BinaryItem
                 Name="ST_5a66fa2842c342a9b44f6c4168c30a76.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHpHfmUAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAA5jMA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHxKfmUAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAA5jMA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAJQzAABPAAAAAEAAAGwEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -831,7 +889,7 @@ ACEBSAHGACEBigbPAKkAJwXVAMkAJwUGACwAggbkACwApwPpANkACgHuANkAEAb4ANEA4wO3AAgA
 FAAPAQgAGAAUASkAewChAS4ACwB5AS4AEwCCAS4AGwChAS4AIwCqAS4AKwDTAS4AMwDTAS4AOwDT
 AS4AQwCqAS4ASwDZAS4AUwDTAS4AWwDwAUMAYwAUAUkAewChAWEAawAUAWMAcwAUAcMAawAUAeMA
 awAUARsAnAD0AAMAAQAEAAMAAAAXBWoBAACzAW8BAABQBnQBAgAFAAMAAgAGAAUAAQAHAAUAAgAI
-AAcAOwBHAF0AbQDdAASAAAABAAAALyLEDQAAAAAAAHwAAAAEAAAAAAAAAAAAAAD9ANsAAAAAABAA
+AAcAOwBHAF0AbQDdAASAAAABAAAALyJGDwAAAAAAAHwAAAAEAAAAAAAAAAAAAAD9ANsAAAAAABAA
 AAAAAAAAAAAAAAYB9gMAAAAABAAAAAAAAAAAAAAA/QCXBAAAAAAEAAAAAAAAAAAAAAD9AH8BAAAA
 ABAAAAAAAAAAAAAAAAYBrQAAAAAAAAAAAAEAAAB4BQAABQACAAYAAgAHAAIAIwA3ADEAkgAAAAAA
 ADw+Y19fRGlzcGxheUNsYXNzMF8wADxEVVpFTFQ+Yl9fMAA8PjlfXzBfMQA8RFVaRUxUPmJfXzBf
@@ -869,7 +927,7 @@ AAEfVQBzAGUAcgA6ADoAQQBuAGEASwBsAGEAcwBvAHIAAAMwAAAZVQBzAGUAcgA6ADoAUwBhAHkA
 YQBjAGwAAANfAAAbVQBzAGUAcgA6ADoAQgBvAGwAZwBlAEEAZAAAI1UAcwBlAHIAOgA6AEIAbwBs
 AGcAZQBLAGwAYQBzAG8AcgAAcVMAVABfADUAYQA2ADYAZgBhADIAOAA0ADIAYwAzADQAMgBhADkA
 YgA0ADQAZgA2AGMANAAxADYAOABjADMAMABhADcANgAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBS
-AGUAcwBvAHUAcgBjAGUAcwAAAAAA5DLJ3E1FCE+sPFm6BIrPtwAEIAEBCAMgAAEFIAEBEREEIAEB
+AGUAcwBvAHUAcgBjAGUAcwAAAAAAiTMxQyjBz0uwZuGpAYk4xQAEIAEBCAMgAAEFIAEBEREEIAEB
 DgUgAQERXQQHARIcBiABHQ4dAw8QAQEVEnUBHgAVEnkBHgADCgEOBRUSfQEOBSACARwYBRUSdQEO
 CSABARUSfQETAAUAAg4ODgcVEoCBAg4OByACARMAEwEMFRJJAw4VEU0CDg4OFxACAx4BFRJ5AR4A
 HgEVEkkDHgEeAB4BCQoCFRFNAg4ODgMHAQ4FIAASgIUFIAASgIkGIAESgI0cAyAAHAMgAA4FAAEO
@@ -887,14 +945,14 @@ AAAAAAAAANYzAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIMwAAAAAAAAAAAAAAAF9Db3JEbGxN
 YWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAA
 SAAAAFhAAAAQBAAAAAAAAAAAAAAQBDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA
-AAAAvQTv/gAAAQAAAAEAxA0vIgAAAQDEDS8iPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
+AAAAvQTv/gAAAQAAAAEARg8vIgAAAQBGDy8iPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
 AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
 AAAAAAAAALAEcAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAATAMAAAEAMAAwADAA
 MAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBu
 AHkATgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAA
 AABTAFQAXwA1AGEANgA2AGYAYQAyADgANAAyAGMAMwA0ADIAYQA5AGIANAA0AGYANgBjADQAMQA2
 ADgAYwAzADAAYQA3ADYAAAA8AA4AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
-OAA3ADUAMQAuADMANQAyADQAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAVABf
+OAA3ADUAMQAuADMAOQAxADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAVABf
 ADUAYQA2ADYAZgBhADIAOAA0ADIAYwAzADQAMgBhADkAYgA0ADQAZgA2AGMANAAxADYAOABjADMA
 MABhADcANgAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBv
 AHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAzAAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQA
@@ -903,8 +961,8 @@ AAAAUwBUAF8ANQBhADYANgBmAGEAMgA4ADQAMgBjADMANAAyAGEAOQBiADQANABmADYAYwA0ADEA
 NgA4AGMAMwAwAGEANwA2AC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAA
 AFMAVABfADUAYQA2ADYAZgBhADIAOAA0ADIAYwAzADQAMgBhADkAYgA0ADQAZgA2AGMANAAxADYA
 OABjADMAMABhADcANgAAAEAADgABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAw
-AC4AOAA3ADUAMQAuADMANQAyADQAAABEAA4AAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkA
-bwBuAAAAMQAuADAALgA4ADcANQAxAC4AMwA1ADIANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AC4AOAA3ADUAMQAuADMAOQAxADAAAABEAA4AAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkA
+bwBuAAAAMQAuADAALgA4ADcANQAxAC4AMwA5ADEAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -921,16 +979,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
-              <Breakpoint
-                Enabled="True"
-                File="ScriptMain.cs"
-                Line="122"
-                Column="13" />
-              <Breakpoint
-                Enabled="True"
-                File="ScriptMain.cs"
-                Line="115"
-                Column="13" />
             </ScriptProject>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -942,6 +990,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:ExecutableType="STOCK:FOREACHLOOP"
           DTS:LocaleID="-1"
           DTS:ObjectName="SEHIR-DONGU">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="Microsoft.ForEachFromVarEnumerator"
+            DTS:DTSID="{4C5EEE38-8229-474C-8169-FB427CAABFDB}"
+            DTS:ObjectName="{4C5EEE38-8229-474C-8169-FB427CAABFDB}">
+            <DTS:ObjectData>
+              <FEEFVE
+                VariableName="User::BolgeAd" />
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
           <DTS:Variables>
             <DTS:Variable
               DTS:CreationName=""
@@ -950,7 +1007,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
               DTS:Namespace="User"
               DTS:ObjectName="SehirKlasor">
               <DTS:VariableValue
-                DTS:DataType="8">C:\Users\Lenovo\source\repos\VeriBilimiPT02\ISE311P02575\BolgeKlasor\SehirKlasor</DTS:VariableValue>
+                DTS:DataType="8">C:\Users\Lenovo\source\repos\VeriBilimiPT02\ISE311P02575\BolgeKlasor\SehirKlasor\\</DTS:VariableValue>
             </DTS:Variable>
           </DTS:Variables>
           <DTS:Executables>
@@ -994,8 +1051,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                       <connections>
                         <connection
                           refId="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-OLUSTUR-YAZ\SEHIR-OZET-CSV.Connections[FlatFileConnection]"
-                          connectionManagerID="Package.ConnectionManagers[CSVBag]"
-                          connectionManagerRefId="Package.ConnectionManagers[CSVBag]"
+                          connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                          connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                           name="FlatFileConnection" />
                       </connections>
                       <inputs>
@@ -1128,7 +1185,7 @@ WHERE BolgeID = ? AND SehirAd = ?</property>
                         <property
                           dataType="System.String"
                           description="The mappings between the parameters in the SQL command and variables."
-                          name="ParameterMapping">"Parameter0:Input",{1FED2205-5B62-4DC1-BF6E-E7BD5CCA840A};"Parameter1:Input",{B36BEFBD-5534-4F84-ACBC-1E402BD034EA};</property>
+                          name="ParameterMapping">"0:Input",{EAC9BDC5-522A-42C9-B192-8B7B4B2EBD22};"1:Input",{27FAE01E-706A-4BAA-8A0C-0C3EF42A0EE0};</property>
                       </properties>
                       <connections>
                         <connection
@@ -1296,36 +1353,6 @@ WHERE BolgeID = ? AND SehirAd = ?</property>
                   ReadOnlyVariables="User::SehirKlasor"
                   ReadWriteVariables="User::DosyaAd">
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_d2ad39349fc44ad881ced93194cdf8ca")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_d2ad39349fc44ad881ced93194cdf8ca")]
-[assembly: AssemblyCopyright("Copyright @  2023")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-                  <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -1444,6 +1471,35 @@ using System.Runtime.CompilerServices;
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d2ad39349fc44ad881ced93194cdf8ca.Properties.Settings.get_Default():ST_d2ad39349fc44ad881ced93194cdf8ca.Properties.Sett" +
+    "ings")]
+
+namespace ST_d2ad39349fc44ad881ced93194cdf8ca.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
                   <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -1661,7 +1717,7 @@ namespace ST_d2ad39349fc44ad881ced93194cdf8ca
     <msb:CodeName>ST_d2ad39349fc44ad881ced93194cdf8ca</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_d2ad39349fc44ad881ced93194cdf8ca</msb:DisplayName>
-    <msb:ProjectId>{1C93EB4A-A99B-4758-86C2-514400DCA4F1}</msb:ProjectId>
+    <msb:ProjectId>{2779B843-34B1-448D-95AB-3BA5678949EA}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_d2ad39349fc44ad881ced93194cdf8ca.csproj" />
@@ -1674,34 +1730,35 @@ namespace ST_d2ad39349fc44ad881ced93194cdf8ca
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_d2ad39349fc44ad881ced93194cdf8ca")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_d2ad39349fc44ad881ced93194cdf8ca")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d2ad39349fc44ad881ced93194cdf8ca.Properties.Settings.get_Default():ST_d2ad39349fc44ad881ced93194cdf8ca.Properties.Sett" +
-    "ings")]
-
-namespace ST_d2ad39349fc44ad881ced93194cdf8ca.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.settings"
                     Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -1782,12 +1839,12 @@ namespace ST_d2ad39349fc44ad881ced93194cdf8ca.Properties {
                   <BinaryItem
                     Name="ST_d2ad39349fc44ad881ced93194cdf8ca.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDABAufmUAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAji4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAO7rfmUAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAji4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAADwuAABPAAAAAEAAAGwEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAADwuAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAlA4AAAAgAAAAEAAAAAIA
-AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAGwEAAAAQAAAAAYAAAASAAAAAAAAAAAAAAAAAABAAABA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAASAAAAAAAAAAAAAAAAAABAAABA
 LnJlbG9jAAAMAAAAAGAAAAACAAAAGAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABw
 LgAAAAAAAEgAAAACAAUAMCEAAFQMAAABAAAAAAAAAIQtAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwBABrAAAAAQAAESgQAAAKDBICcgEAAHAoEQAACgsCKBIA
@@ -1811,7 +1868,7 @@ AHkAaAUiAHkADwMnAHEAKQUsAMkACgUxANEAsAM2ANkA2wI8AJEADwNAAOEAPwVEANkA5QJMAMkA
 WQUBAHEAOAQGAJEAOAQGAOkAiQBRAOkAcAVYAJkAOARdALkAOAQGAAgAFAB2AAgAGAB7ACkAcwDj
 AC4ACwC7AC4AEwDEAC4AGwDjAC4AIwDsAC4AKwAVAS4AMwAVAS4AOwAVAS4AQwDsAC4ASwAbAS4A
 UwAVAS4AWwAyAUMAYwB7AEkAcwDjAGEAewB7AGMAawB7ABsAAwABAAQAAwAAACgErAAAAPEAsQAA
-AFEFtgACAAQAAwACAAUABQABAAYABQACAAcABwAEgAAAAQAAAC8iEAEAAAAAAAAxAAAABAAAAAAA
+AFEFtgACAAQAAwACAAUABQABAAYABQACAAcABwAEgAAAAQAAAC8i/18AAAAAAAAxAAAABAAAAAAA
 AAAAAAAAZABVAAAAAAAQAAAAAAAAAAAAAABtABgDAAAAAAQAAAAAAAAAAAAAAGQAuQMAAAAAEAAA
 AAAAAAAAAAAAbQAKAAAAAAAAAAAAAQAAAIkEAAAFAAIAAAAAPE1vZHVsZT4ATWljcm9zb2Z0LlNx
 bFNlcnZlci5NYW5hZ2VkRFRTAHZhbHVlX18AU1RfZDJhZDM5MzQ5ZmM0NGFkODgxY2VkOTMxOTRj
@@ -1842,8 +1899,8 @@ dwBnZXRfQXNzZW1ibHkAAAAAACd5AHkAeQB5AF8ATQBNAF8AZABkAF8ASABIAF8AbQBtAF8AcwBz
 AAAjVQBzAGUAcgA6ADoAUwBlAGgAaQByAEsAbABhAHMAbwByAAAVTwB6AGUAdABUAGEAYgBsAG8A
 XwAACS4AQwBTAFYAABtVAHMAZQByADoAOgBEAG8AcwB5AGEAQQBkAABxUwBUAF8AZAAyAGEAZAAz
 ADkAMwA0ADkAZgBjADQANABhAGQAOAA4ADEAYwBlAGQAOQAzADEAOQA0AGMAZABmADgAYwBhAC4A
-UAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAA9Sht8/jZzUOJAb2uH64H
-CQAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERVQYHAw4OET0EAAARPQQgAQ4OBCAAEmUEIAASaQUg
+UAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAT/pvfo5Y/0ucfNP5KUNo
+HAAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERVQYHAw4OET0EAAARPQQgAQ4OBCAAEmUEIAASaQUg
 ARJtHAMgABwDIAAOBwAEDg4ODg4EIAEBHAYAARJ1EXkEIAASfQYgAgEOEn0It3pcVhk04IkIiYRd
 zYCAzJEEAAAAAAQBAAAAAwYSTQMGElEDBhIQAgYIAwYRFAQAABJNBAAAElEFAAEBElEEAAASEAMA
 AAEECAASTQQIABJRBAgAEhAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MB
@@ -1862,25 +1919,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
-AABIAAAAWEAAAA4EAAAAAAAAAAAAAA4ENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
-AAAAAAC9BO/+AAABAAAAAQAQAS8iAAABABABLyI/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
+AAAAAAC9BO/+AAABAAAAAQD/Xy8iAAABAP9fLyI/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
 RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
-AG4AAAAAAAAAsARuAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABKAwAAAQAwADAA
+AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
 MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
 AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
 AAAAAFMAVABfAGQAMgBhAGQAMwA5ADMANAA5AGYAYwA0ADQAYQBkADgAOAAxAGMAZQBkADkAMwAx
-ADkANABjAGQAZgA4AGMAYQAAADoADQABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
-LgA4ADcANQAxAC4AMgA3ADIAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBU
-AF8AZAAyAGEAZAAzADkAMwA0ADkAZgBjADQANABhAGQAOAA4ADEAYwBlAGQAOQAzADEAOQA0AGMA
-ZABmADgAYwBhAC4AZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABD
-AG8AcAB5AHIAaQBnAGgAdAAgAEAAIAAgADIAMAAyADMAAAAqAAEAAQBMAGUAZwBhAGwAVAByAGEA
-ZABlAG0AYQByAGsAcwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBt
-AGUAAABTAFQAXwBkADIAYQBkADMAOQAzADQAOQBmAGMANAA0AGEAZAA4ADgAMQBjAGUAZAA5ADMA
-MQA5ADQAYwBkAGYAOABjAGEALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAA
-AAAAUwBUAF8AZAAyAGEAZAAzADkAMwA0ADkAZgBjADQANABhAGQAOAA4ADEAYwBlAGQAOQAzADEA
-OQA0AGMAZABmADgAYwBhAAAAPgANAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAu
-ADAALgA4ADcANQAxAC4AMgA3ADIAAAAAAEIADQABAEEAcwBzAGUAbQBiAGwAeQAgAFYAZQByAHMA
-aQBvAG4AAAAxAC4AMAAuADgANwA1ADEALgAyADcAMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ADkANABjAGQAZgA4AGMAYQAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
+LgA4ADcANQAxAC4AMgA0ADUANwA1AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+AFMAVABfAGQAMgBhAGQAMwA5ADMANAA5AGYAYwA0ADQAYQBkADgAOAAxAGMAZQBkADkAMwAxADkA
+NABjAGQAZgA4AGMAYQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
+AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAzAAAAKgABAAEATABlAGcAYQBsAFQA
+cgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBu
+AGEAbQBlAAAAUwBUAF8AZAAyAGEAZAAzADkAMwA0ADkAZgBjADQANABhAGQAOAA4ADEAYwBlAGQA
+OQAzADEAOQA0AGMAZABmADgAYwBhAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
+AGUAAAAAAFMAVABfAGQAMgBhAGQAMwA5ADMANAA5AGYAYwA0ADQAYQBkADgAOAAxAGMAZQBkADkA
+MwAxADkANABjAGQAZgA4AGMAYQAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
+ADEALgAwAC4AOAA3ADUAMQAuADIANAA1ADcANQAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAA3ADUAMQAuADIANAA1ADcANQAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -2146,35 +2203,34 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
   </resheader>
 </root>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_8c7feeaa03d6497c88d301f2333362af")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_8c7feeaa03d6497c88d301f2333362af")]
-[assembly: AssemblyCopyright("Copyright @  2023")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_8c7feeaa03d6497c88d301f2333362af.Properties.Settings.get_Default():ST_8c7feeaa03d6497c88d301f2333362af.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+namespace ST_8c7feeaa03d6497c88d301f2333362af.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
                   <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -2319,7 +2375,7 @@ namespace ST_8c7feeaa03d6497c88d301f2333362af
     <msb:CodeName>ST_8c7feeaa03d6497c88d301f2333362af</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_8c7feeaa03d6497c88d301f2333362af</msb:DisplayName>
-    <msb:ProjectId>{04FE562E-4DDB-496A-8D9D-5B8BCCEB1917}</msb:ProjectId>
+    <msb:ProjectId>{6FBCFF31-A631-41CE-8CD4-0FB2F88A8D5B}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_8c7feeaa03d6497c88d301f2333362af.csproj" />
@@ -2332,34 +2388,35 @@ namespace ST_8c7feeaa03d6497c88d301f2333362af
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_8c7feeaa03d6497c88d301f2333362af")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_8c7feeaa03d6497c88d301f2333362af")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_8c7feeaa03d6497c88d301f2333362af.Properties.Settings.get_Default():ST_8c7feeaa03d6497c88d301f2333362af.Properties.Sett" +
-    "ings")]
-
-namespace ST_8c7feeaa03d6497c88d301f2333362af.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.settings"
                     Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -2440,12 +2497,12 @@ namespace ST_8c7feeaa03d6497c88d301f2333362af.Properties {
                   <BinaryItem
                     Name="ST_8c7feeaa03d6497c88d301f2333362af.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDALMtfmUAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAwjEA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDALLrfmUAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAwjEA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHAxAABPAAAAAEAAAGwEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHAxAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAyBEAAAAgAAAAEgAAAAIA
-AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAGwEAAAAQAAAAAYAAAAUAAAAAAAAAAAAAAAAAABAAABA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAAUAAAAAAAAAAAAAAAAAABAAABA
 LnJlbG9jAAAMAAAAAGAAAAACAAAAGgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAACk
 MQAAAAAAAEgAAAACAAUAFCIAAKQOAAABAAAAAAAAALgwAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwBACbAAAAAAAAAHMQAAAKJXIBAABwcgUAAHBvEQAACiVy
@@ -2477,7 +2534,7 @@ AIkABgUGABEB/ACOABEBUgaXAKkABgWdAMkABgUGABwASgasABwAbAOxAAEBvgC2AAgAFADOAAgA
 GADTACkAewBdAS4ACwA1AS4AEwA+AS4AGwBdAS4AIwBmAS4AKwCPAS4AMwCPAS4AOwCPAS4AQwBm
 AS4ASwCVAS4AUwCPAS4AWwCsAUMAYwDTAEkAewBdAWEAawDTAGMAcwDTAMMAawDTAF8AAwABAAQA
 AwAAAO4EJgEAAHgBKwEAAB8GMAECAAUAAwACAAYABQABAAcABQACAAgABwAbACoApQAEgAAAAQAA
-AC8i4QAAAAAAAACGAwAABAAAAAAAAAAAAAAAvACPAAAAAAAQAAAAAAAAAAAAAADFANIDAAAAAAQA
+AC8i4V8AAAAAAACGAwAABAAAAAAAAAAAAAAAvACPAAAAAAAQAAAAAAAAAAAAAADFANIDAAAAAAQA
 AAAAAAAAAAAAALwAcwQAAAAABAAAAAAAAAAAAAAAvABEAQAAAAAQAAAAAAAAAAAAAADFAGEAAAAA
 AAAAAAABAAAAVwUAAAUAAgAGAAIAJwBVAAAAADw+OV9fMF8wADxEVVpFTFQ+Yl9fMF8wAElFbnVt
 ZXJhYmxlYDEAS2V5VmFsdWVQYWlyYDIARGljdGlvbmFyeWAyAEZ1bmNgMwA8PjkAPE1vZHVsZT4A
@@ -2512,8 +2569,8 @@ bWJseQAAAAMwAQEDSQAAA9YAAQNPAAAD3AABA1UAAAMeAQEDRwAAA14BAQNTAAADxwABA0MAAAPC
 AAEDQQAAG1UAcwBlAHIAOgA6AFMAZQBoAGkAcgBBAGQAACNVAHMAZQByADoAOgBCAG8AbABnAGUA
 SwBsAGEAcwBvAHIAAANcAAAjVQBzAGUAcgA6ADoAUwBlAGgAaQByAEsAbABhAHMAbwByAABxUwBU
 AF8AOABjADcAZgBlAGUAYQBhADAAMwBkADYANAA5ADcAYwA4ADgAZAAzADAAMQBmADIAMwAzADMA
-MwA2ADIAYQBmAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAX7TV
-endhLE+bDkA/ZCVL9QAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERXQYVEmkCDg4HIAIBEwATAQwV
+MwA2ADIAYQBmAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAA1ipc
+tDJv6EO5apC6BEduVwAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERXQYVEmkCDg4HIAIBEwATAQwV
 EkkDDhURTQIODg4FIAIBHBgXEAIDHgEVEnEBHgAeARUSSQMeAR4AHgEJCgIVEU0CDg4OBAcCDg4E
 IAASdQQgABJ5BSABEn0cAyAAHAMgAA4EAAEODgcABA4ODg4OBCABARwIAAESgIkRgI0FIAASgJEH
 IAIBDhKAkQYVEU0CDg4EIAATAAQgABMBBSACDg4OCLd6XFYZNOCJCImEXc2AgMyRBAAAAAAEAQAA
@@ -2529,25 +2586,25 @@ AAAAAAAAUEFEUEFEULQAAACYMQAAAAAAAAAAAACyMQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 pDEAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
-AEgAAABYQAAADgQAAAAAAAAAAAAADgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
-AAAAAL0E7/4AAAEAAAABAOEALyIAAAEA4QAvIj8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AEgAAABYQAAAGgQAAAAAAAAAAAAAGgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
+AAAAAL0E7/4AAAEAAAABAOFfLyIAAAEA4V8vIj8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
 AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
-bgAAAAAAAACwBG4DAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAEoDAAABADAAMAAw
+bgAAAAAAAACwBHoDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAFYDAAABADAAMAAw
 ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEA
 bgB5AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAA
 AAAAUwBUAF8AOABjADcAZgBlAGUAYQBhADAAMwBkADYANAA5ADcAYwA4ADgAZAAzADAAMQBmADIA
-MwAzADMAMwA2ADIAYQBmAAAAOgANAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAu
-ADgANwA1ADEALgAyADIANQAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQA
-XwA4AGMANwBmAGUAZQBhAGEAMAAzAGQANgA0ADkANwBjADgAOABkADMAMAAxAGYAMgAzADMAMwAz
-ADYAMgBhAGYALgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMA
-bwBwAHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADIAMwAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBk
-AGUAbQBhAHIAawBzAAAAAAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0A
-ZQAAAFMAVABfADgAYwA3AGYAZQBlAGEAYQAwADMAZAA2ADQAOQA3AGMAOAA4AGQAMwAwADEAZgAy
-ADMAMwAzADMANgAyAGEAZgAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAA
-AABTAFQAXwA4AGMANwBmAGUAZQBhAGEAMAAzAGQANgA0ADkANwBjADgAOABkADMAMAAxAGYAMgAz
-ADMAMwAzADYAMgBhAGYAAAA+AA0AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4A
-MAAuADgANwA1ADEALgAyADIANQAAAAAAQgANAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBp
-AG8AbgAAADEALgAwAC4AOAA3ADUAMQAuADIAMgA1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+MwAzADMAMwA2ADIAYQBmAAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAu
+ADgANwA1ADEALgAyADQANQA0ADUAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAA
+UwBUAF8AOABjADcAZgBlAGUAYQBhADAAMwBkADYANAA5ADcAYwA4ADgAZAAzADAAMQBmADIAMwAz
+ADMAMwA2ADIAYQBmAC4AZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQA
+AABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIAAgADIAMAAyADMAAAAqAAEAAQBMAGUAZwBhAGwAVABy
+AGEAZABlAG0AYQByAGsAcwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4A
+YQBtAGUAAABTAFQAXwA4AGMANwBmAGUAZQBhAGEAMAAzAGQANgA0ADkANwBjADgAOABkADMAMAAx
+AGYAMgAzADMAMwAzADYAMgBhAGYALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0A
+ZQAAAAAAUwBUAF8AOABjADcAZgBlAGUAYQBhADAAMwBkADYANAA5ADcAYwA4ADgAZAAzADAAMQBm
+ADIAMwAzADMAMwA2ADIAYQBmAAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAA
+MQAuADAALgA4ADcANQAxAC4AMgA0ADUANAA1AAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABW
+AGUAcgBzAGkAbwBuAAAAMQAuADAALgA4ADcANQAxAC4AMgA0ADUANAA1AAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -2610,13 +2667,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{10D72C36-A94F-4C57-94B1-8DCA37A30730}"
               SQLTask:SqlStatementSource="SELECT SehirAd FROM SEHIR WHERE BolgeID = ?"
-              SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="0"
-                SQLTask:DtsVariableName="User::SehirListesi" />
+                SQLTask:DtsVariableName="User::SehirAd" />
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="User::Sayacl"
+                SQLTask:DtsVariableName="User::BolgeID"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="17"
                 SQLTask:ParameterSize="-1" />
@@ -2632,12 +2689,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:From="Package\BOLGE-DONGU\BOLGE-AD-BUL"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\BOLGE-DONGU\byol" />
+          DTS:To="Package\BOLGE-DONGU\BOLGE-KLASOR-YOL-OLUSTUR" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\BOLGE-DONGU.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
           DTS:DTSID="{561EC25E-86C3-4605-910F-7EC3391976BE}"
-          DTS:From="Package\BOLGE-DONGU\byol"
+          DTS:From="Package\BOLGE-DONGU\BOLGE-KLASOR-YOL-OLUSTUR"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
           DTS:To="Package\BOLGE-DONGU\BOLGE-KLASOR-OLUSTUR" />
@@ -2712,6 +2769,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           Size="217.333333333334,42.6666666666667"
           Id="Package\BOLGE-DONGU\BOLGE-KLASOR-OLUSTUR"
           TopLeft="27.708311568326,123.622633687632" />
+        <NodeLayout
+          Size="242.666666666667,42.6666666666667"
+          Id="Package\BOLGE-DONGU\BOLGE-KLASOR-YOL-OLUSTUR"
+          TopLeft="381.333316234252,12.7401586819846" />
         <NodeLayout
           Size="196,42.6666666666667"
           Id="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-OLUSTUR-YAZ"
@@ -2830,6 +2891,62 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           Id="Package\BOLGE-DONGU\SEHIR-LISTESI"
           TopLeft="338.249981727452,122.998787978896" />
         <EdgeLayout
+          Id="Package\BOLGE-DONGU.PrecedenceConstraints[Constraint]"
+          TopLeft="211.333330986401,31.7886014529995">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="169.999985247851,0"
+              Start="0,0"
+              End="162.499985247851,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="162.499985247851,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\BOLGE-DONGU.PrecedenceConstraints[Constraint 1]"
+          TopLeft="502.666649567585,55.4068253486513">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-366.291671332592,68.2158083389808"
+              Start="0,0"
+              End="-366.291671332592,60.7158083389808">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.1079041694904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.1079041694904"
+                    Point2="0,34.1079041694904"
+                    Point3="-4,34.1079041694904" />
+                  <mssgle:LineSegment
+                    End="-362.291671332592,34.1079041694904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-362.291671332592,34.1079041694904"
+                    Point2="-366.291671332592,34.1079041694904"
+                    Point3="-366.291671332592,38.1079041694904" />
+                  <mssgle:LineSegment
+                    End="-366.291671332592,60.7158083389808" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\BOLGE-DONGU.PrecedenceConstraints[Constraint 2]"
           TopLeft="245.041644901659,144.644044166597">
           <EdgeLayout.Curve>
@@ -2857,9 +2974,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-92.2499715574098,35.4804192502364"
+              EndConnector="-92.2499715574098,35.4804192502363"
               Start="0,0"
-              End="-92.2499715574098,27.9804192502364">
+              End="-92.2499715574098,27.9804192502363">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2876,67 +2993,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                     Point2="-92.2499715574098,17.7402096251182"
                     Point3="-92.2499715574098,21.7402096251182" />
                   <mssgle:LineSegment
-                    End="-92.2499715574098,27.9804192502364" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="98.6666666666667,42.6666666666667"
-          Id="Package\BOLGE-DONGU\byol"
-          TopLeft="381.333316234252,12.7401586819846" />
-        <EdgeLayout
-          Id="Package\BOLGE-DONGU.PrecedenceConstraints[Constraint]"
-          TopLeft="211.333330986401,31.7886014529995">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="169.999985247851,0"
-              Start="0,0"
-              End="162.499985247851,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="162.499985247851,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\BOLGE-DONGU.PrecedenceConstraints[Constraint 1]"
-          TopLeft="430.666649567585,55.4068253486513">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-294.291671332592,68.2158083389808"
-              Start="0,0"
-              End="-294.291671332592,60.7158083389808">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.1079041694904" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.1079041694904"
-                    Point2="0,34.1079041694904"
-                    Point3="-4,34.1079041694904" />
-                  <mssgle:LineSegment
-                    End="-290.291671332592,34.1079041694904" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-290.291671332592,34.1079041694904"
-                    Point2="-294.291671332592,34.1079041694904"
-                    Point3="-294.291671332592,38.1079041694904" />
-                  <mssgle:LineSegment
-                    End="-294.291671332592,60.7158083389808" />
+                    End="-92.2499715574098,27.9804192502363" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2948,8 +3005,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="623.333333333334,601.333333333334"
-          Size="623.333333333334,644"
+          PanelSize="628.666666666667,601.333333333334"
+          Size="628.666666666667,644.666666666667"
           Id="Package\BOLGE-DONGU"
           TopLeft="6.74999994412065,108.166666666667" />
         <NodeLayout
@@ -2985,7 +3042,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     design-time-name="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-OLUSTUR-YAZ">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="182.666666666667,42.6666666666667"
           Id="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-OLUSTUR-YAZ\SEHIR-OZET-TABLO"
@@ -2996,13 +3053,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           TopLeft="225.499991506338,184.657893099118" />
         <EdgeLayout
           Id="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-OLUSTUR-YAZ.Paths[OLE DB Source Output]"
-          TopLeft="217.458333305394,64.1666678085661">
+          TopLeft="217.458333305393,64.1666678085662">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="92.7083248676115,120.491225290552"
+              EndConnector="92.7083248676114,120.491225290552"
               Start="0,0"
-              End="92.7083248676115,112.991225290552">
+              End="92.7083248676114,112.991225290552">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3013,25 +3070,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                     Point2="0,60.2456126452759"
                     Point3="4,60.2456126452759" />
                   <mssgle:LineSegment
-                    End="88.7083248676115,60.2456126452759" />
+                    End="88.7083248676114,60.2456126452759" />
                   <mssgle:CubicBezierSegment
-                    Point1="88.7083248676115,60.2456126452759"
-                    Point2="92.7083248676115,60.2456126452759"
-                    Point3="92.7083248676115,64.2456126452759" />
+                    Point1="88.7083248676114,60.2456126452759"
+                    Point2="92.7083248676114,60.2456126452759"
+                    Point3="92.7083248676114,64.2456126452759" />
                   <mssgle:LineSegment
-                    End="92.7083248676115,112.991225290552" />
+                    End="92.7083248676114,112.991225290552" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-OLUSTUR-YAZ\SEHIR-OZET-TABLO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
