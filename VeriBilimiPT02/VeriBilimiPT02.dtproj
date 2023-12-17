@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-S6N2Q22</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAyHpU8bdC1EWKsRvfQiEb/AAAAAACAAAAAAAQZgAAAAEAACAAAAAVFtrXEk6IFhepedii/+DLz5Q0SOeZyMmazwKPTZRWVwAAAAAOgAAAAAIAACAAAADIPP2FJ8QtXwVvfVwo6dItbcuOzbDhWWIDxrc04iujPJAAAAD5HlV8mzW1eIow3IHuFOUQhnkr+VghHzn5pr1N+CGy7wa1BwAw/ji58izl4cCYCeMgvK7qEHH/xAqQg7ZoHTm2xayCZl2QHyjbrMowO5YhCp8UXSLMHzlY4xIHYPOJ2F/KIuK0dhJMCQN2T6nlXcA43CuLo2dWfKltUnkNHfORqUXGZmpHSZ81lDMmpXtd44FAAAAAeS8nTT2jcDxrVNoBvAi1Ls6uS+IDEIle9N+3ulqPSKHX4ytlT6IBcqsEPvBOICDrNM/caXBJs2ZjBPTEv+OmTw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAyHpU8bdC1EWKsRvfQiEb/AAAAAACAAAAAAAQZgAAAAEAACAAAAD1exGxHfzIJAFO+4AaemVZspMVchbGeDXZA85MWTvTnAAAAAAOgAAAAAIAACAAAAAejKbdL/CSj44hR+3DnptpA1fSzzqpSVR4ijv/63BX/JAAAAAnWhKexnNnz/FdCfpUgiMuNNs9LDzrmj7nJ3WgJpclUrUhc5pgii0Cepz76Ee7eqf2extsd7QZPxr76TIUOfjjDpo9/+jLvddREI+Wm14OT4NaJqDEei2+e5aGfE6BB74Wk1dhgfuEbFFVV7522Q7oyeHr9tf0/SMg5cgEJOu5QVylWgOai2drwDmh6DNGRWlAAAAAhvLUuhZnl2aiplraoYutcHmHv2ZuXn4WU/GBKP4PhPtI5WZpjOpN4QBJpdTrY/jycj/nQ5jGMyVpKIztNLVvVw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,10 +42,10 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">48</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">69</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{FDE37D79-E511-4CD9-9C54-567AC3D32D4F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{EB4BF59D-52B3-4B05-8BF6-C6BDF3C111B6}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -110,21 +110,6 @@
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.CSVBag.ConnectionString">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">OzetTablo_23_11_26_00_25_36</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.CSVBag.DataRowsToSkip">
