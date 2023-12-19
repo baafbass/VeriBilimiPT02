@@ -11,15 +11,15 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="272"
-  DTS:VersionGUID="{30CD5997-7787-4710-B248-DF638815F328}">
+  DTS:VersionBuild="279"
+  DTS:VersionGUID="{420CC20F-DC13-417F-8BD1-8EA5C3B42CB7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CSVBag]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{3A3A3421-2E90-4C2B-AD5B-81D92E21BACB}"
+      DTS:DTSID="{92545C59-69BB-4C08-AD23-7E8C641A9906}"
       DTS:ObjectName="CSVBag">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::DosyaAd]</DTS:PropertyExpression>
@@ -27,7 +27,6 @@
         <DTS:ConnectionManager
           DTS:Format="Delimited"
           DTS:LocaleID="1033"
-          DTS:Unicode="True"
           DTS:HeaderRowDelimiter="_x000D__x000A_"
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
@@ -40,7 +39,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="BankaAd"
-              DTS:DTSID="{A1722D78-179D-4228-8B9E-1A80951413D9}"
+              DTS:DTSID="{2774082F-B7C4-40EF-89BA-F9B53FB06D48}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +48,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="DovizID"
-              DTS:DTSID="{7D420CE2-D9E7-416F-B496-4B4A00EFAE04}"
+              DTS:DTSID="{77DDA705-73B6-490F-A927-227A270FCBCB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +56,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="OrtalamaHesapYas"
-              DTS:DTSID="{E707C062-B13E-42BF-A112-3D86D7084EC2}"
+              DTS:DTSID="{13D3C6C4-9808-464A-8F77-D8ECC1717ABD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -65,7 +64,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="AktifHesapSayisi"
-              DTS:DTSID="{900AD35C-9E14-4BCE-AEDB-DA8A52805719}"
+              DTS:DTSID="{C11DA5FE-4C64-4C12-915F-AD3043DC5908}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -73,7 +72,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="ToplamBakiye"
-              DTS:DTSID="{B71E23AB-F4DB-4A05-92BE-9CDE63C0F838}"
+              DTS:DTSID="{F10A6770-986A-41A4-963A-4CA3A5737846}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -102,65 +101,15 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{2545A01B-8C80-45C2-A096-0B3AAF2F4996}"
-      DTS:ObjectName="Flat File Connection Manager">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[User::DosyaAd]</DTS:PropertyExpression>
+      DTS:refId="Package.ConnectionManagers[DESKTOP-S6N2Q22\BAAFBASS.pt02db1 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{95C00694-A7D6-4727-9202-FAFFD9D5E5DF}"
+      DTS:ObjectName="DESKTOP-S6N2Q22\BAAFBASS.pt02db1 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:Format="FixedWidth"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnDelimiter=""
-              DTS:ColumnWidth="255"
-              DTS:MaximumWidth="255"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="BankaAd"
-              DTS:DTSID="{2371EF3B-3510-4AD4-B850-5BB1DBB97B46}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnDelimiter=""
-              DTS:ColumnWidth="20"
-              DTS:MaximumWidth="20"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="DovizID"
-              DTS:DTSID="{BFED1E51-F9D2-46D3-84E7-94DD851ED8C7}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnDelimiter=""
-              DTS:ColumnWidth="11"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="OrtalamaHesapYas"
-              DTS:DTSID="{7EE85AF2-5E0D-4A0D-B48D-D7183DF24F7A}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnDelimiter=""
-              DTS:ColumnWidth="11"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="AktifHesapSayisi"
-              DTS:DTSID="{FE4F56BA-5F26-4DB1-8C50-2F806FA2B196}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnDelimiter=""
-              DTS:ColumnWidth="24"
-              DTS:DataType="5"
-              DTS:TextQualified="True"
-              DTS:ObjectName="ToplamBakiye"
-              DTS:DTSID="{F2450708-2C3F-4F7C-A7BC-72F95B5069B6}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-S6N2Q22\BAAFBASS;Initial Catalog=pt02db;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{95C00694-A7D6-4727-9202-FAFFD9D5E5DF}DESKTOP-S6N2Q22\BAAFBASS.pt02db1 1;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -225,7 +174,7 @@
           DTS:Namespace="User"
           DTS:ObjectName="AnaKlasor">
           <DTS:VariableValue
-            DTS:DataType="8">C:\Users\Lenovo\source\repos\VeriBilimiPT02\ISE311P02575\\</DTS:VariableValue>
+            DTS:DataType="8">C:\Users\Lenovo\source\repos\VeriBilimiPT02\ISE311P02053\</DTS:VariableValue>
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
@@ -253,7 +202,7 @@
           DTS:Namespace="User"
           DTS:ObjectName="BolgeKlasor">
           <DTS:VariableValue
-            DTS:DataType="8">C:\Users\Lenovo\source\repos\VeriBilimiPT02\ISE311P02575\BolgeKlasor\\</DTS:VariableValue>
+            DTS:DataType="8">C:\Users\Lenovo\source\repos\VeriBilimiPT02\ISE311P02575\BolgeKlasor\</DTS:VariableValue>
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
@@ -991,12 +940,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:LocaleID="-1"
           DTS:ObjectName="SEHIR-DONGU">
           <DTS:ForEachEnumerator
-            DTS:CreationName="Microsoft.ForEachFromVarEnumerator"
-            DTS:DTSID="{4C5EEE38-8229-474C-8169-FB427CAABFDB}"
-            DTS:ObjectName="{4C5EEE38-8229-474C-8169-FB427CAABFDB}">
+            DTS:CreationName="Microsoft.ForEachADOEnumerator"
+            DTS:DTSID="{879EEAB0-BA41-4015-BB38-B6A229FA57BC}"
+            DTS:ObjectName="{879EEAB0-BA41-4015-BB38-B6A229FA57BC}">
             <DTS:ObjectData>
-              <FEEFVE
-                VariableName="User::BolgeAd" />
+              <FEEADO
+                EnumType="EnumerateRowsInFirstTable"
+                VarName="User::SehirListesi" />
             </DTS:ObjectData>
           </DTS:ForEachEnumerator>
           <DTS:Variables>
@@ -1007,7 +957,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
               DTS:Namespace="User"
               DTS:ObjectName="SehirKlasor">
               <DTS:VariableValue
-                DTS:DataType="8">C:\Users\Lenovo\source\repos\VeriBilimiPT02\ISE311P02575\BolgeKlasor\SehirKlasor\\</DTS:VariableValue>
+                DTS:DataType="8">C:\Users\Lenovo\source\repos\VeriBilimiPT02\ISE311P02575\BolgeKlasor\SehirKlasor\</DTS:VariableValue>
             </DTS:Variable>
           </DTS:Variables>
           <DTS:Executables>
@@ -1051,8 +1001,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                       <connections>
                         <connection
                           refId="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-OLUSTUR-YAZ\SEHIR-OZET-CSV.Connections[FlatFileConnection]"
-                          connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                          connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                          connectionManagerID="Package.ConnectionManagers[CSVBag]"
+                          connectionManagerRefId="Package.ConnectionManagers[CSVBag]"
                           name="FlatFileConnection" />
                       </connections>
                       <inputs>
@@ -1185,13 +1135,13 @@ WHERE BolgeID = ? AND SehirAd = ?</property>
                         <property
                           dataType="System.String"
                           description="The mappings between the parameters in the SQL command and variables."
-                          name="ParameterMapping">"0:Input",{EAC9BDC5-522A-42C9-B192-8B7B4B2EBD22};"1:Input",{27FAE01E-706A-4BAA-8A0C-0C3EF42A0EE0};</property>
+                          name="ParameterMapping">"Parameter0:Input",{B4411811-EAF1-49D8-B9CD-5D4AF21C1989};"Parameter1:Input",{27FAE01E-706A-4BAA-8A0C-0C3EF42A0EE0};</property>
                       </properties>
                       <connections>
                         <connection
                           refId="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-OLUSTUR-YAZ\SEHIR-OZET-TABLO.Connections[OleDbConnection]"
-                          connectionManagerID="Package.ConnectionManagers[DESKTOP-S6N2Q22\BAAFBASS.pt02db1]"
-                          connectionManagerRefId="Package.ConnectionManagers[DESKTOP-S6N2Q22\BAAFBASS.pt02db1]"
+                          connectionManagerID="Package.ConnectionManagers[DESKTOP-S6N2Q22\BAAFBASS.pt02db1 1]"
+                          connectionManagerRefId="Package.ConnectionManagers[DESKTOP-S6N2Q22\BAAFBASS.pt02db1 1]"
                           description="The OLE DB runtime connection used to access the database."
                           name="OleDbConnection" />
                       </connections>
@@ -2651,6 +2601,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
               DTS:ObjectName="Constraint 2"
               DTS:To="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-OLUSTUR-YAZ" />
           </DTS:PrecedenceConstraints>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{495899CA-ACB5-4219-87D9-4DE7F97B4D5A}"
+              DTS:ObjectName="{495899CA-ACB5-4219-87D9-4DE7F97B4D5A}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::SehirAd" />
+          </DTS:ForEachVariableMappings>
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\BOLGE-DONGU\SEHIR-LISTESI"
@@ -2667,15 +2625,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{10D72C36-A94F-4C57-94B1-8DCA37A30730}"
               SQLTask:SqlStatementSource="SELECT SehirAd FROM SEHIR WHERE BolgeID = ?"
-              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="0"
-                SQLTask:DtsVariableName="User::SehirAd" />
+                SQLTask:DtsVariableName="User::SehirListesi" />
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="User::BolgeID"
+                SQLTask:DtsVariableName="User::Sayacl"
                 SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="17"
+                SQLTask:DataType="3"
                 SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
@@ -3005,8 +2963,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="628.666666666667,601.333333333334"
-          Size="628.666666666667,644.666666666667"
+          PanelSize="628.666666666667,602.666666666667"
+          Size="628.666666666667,645.333333333334"
           Id="Package\BOLGE-DONGU"
           TopLeft="6.74999994412065,108.166666666667" />
         <NodeLayout
@@ -3046,37 +3004,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="182.666666666667,42.6666666666667"
           Id="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-OLUSTUR-YAZ\SEHIR-OZET-TABLO"
-          TopLeft="126.12499997206,21.5000011418995" />
+          TopLeft="248.624989131466,12.3421051880329" />
         <NodeLayout
           Size="169.333333333334,42.6666666666667"
           Id="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-OLUSTUR-YAZ\SEHIR-OZET-CSV"
-          TopLeft="225.499991506338,184.657893099118" />
+          TopLeft="298.624988237396,139.4999988581" />
         <EdgeLayout
           Id="Package\BOLGE-DONGU\SEHIR-DONGU\DOSYA-OLUSTUR-YAZ.Paths[OLE DB Source Output]"
-          TopLeft="217.458333305393,64.1666678085662">
+          TopLeft="339.958322464799,55.0087718546996">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="92.7083248676114,120.491225290552"
+              EndConnector="43.3333324392636,84.491227003401"
               Start="0,0"
-              End="92.7083248676114,112.991225290552">
+              End="43.3333324392636,76.991227003401">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.2456126452759" />
+                    End="0,38.2456135017005" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,56.2456126452759"
-                    Point2="0,60.2456126452759"
-                    Point3="4,60.2456126452759" />
+                    Point1="0,38.2456135017005"
+                    Point2="0,42.2456135017005"
+                    Point3="4,42.2456135017005" />
                   <mssgle:LineSegment
-                    End="88.7083248676114,60.2456126452759" />
+                    End="39.3333324392636,42.2456135017005" />
                   <mssgle:CubicBezierSegment
-                    Point1="88.7083248676114,60.2456126452759"
-                    Point2="92.7083248676114,60.2456126452759"
-                    Point3="92.7083248676114,64.2456126452759" />
+                    Point1="39.3333324392636,42.2456135017005"
+                    Point2="43.3333324392636,42.2456135017005"
+                    Point3="43.3333324392636,46.2456135017005" />
                   <mssgle:LineSegment
-                    End="92.7083248676114,112.991225290552" />
+                    End="43.3333324392636,76.991227003401" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
